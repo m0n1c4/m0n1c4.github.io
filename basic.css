@@ -59,4 +59,11 @@
             [class=interests] header {
                 font-size: 1.25em;
             }
+            #avatar {
+                border-width: 1px;
+                border-style: dotted;
+                border-radius: 50%;
+                padding: 15px;
+                margin: 10px;
+            }
         
