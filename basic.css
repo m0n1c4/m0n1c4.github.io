@@ -21,7 +21,7 @@
                 margin-bottom: 20px;
                 display: flex;
                 padding: 10px;
-                border-radius: 50%;
+                border-radius: 15px 50px;
             }
             nav header {
                 display: flex;
