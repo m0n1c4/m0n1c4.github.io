@@ -1,9 +1,10 @@
-
+            /*main body of site content*/
             body {
                 background: rgb(228, 209, 209);
                 color: rgb(45, 45, 45);
                 padding: 10px;
                 font-family: arial;
+                border-radius: 15px;
             }
             header {
                 font-size: 1.5em;
@@ -60,6 +61,8 @@
             [class=interests] header {
                 font-size: 1.25em;
             }
+           
+           /*A special image id*/
             #avatar {
                 border-width: 1px;
                 border-style: dotted;
