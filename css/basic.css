@@ -56,6 +56,10 @@
                 background: rgb(245, 238, 219);
                 display: flex;
             }
+            img {
+               max-width: 100%;
+               height: auto;
+            }
             [class=sidebar] {
                 margin-right: 25px;
                 padding: 10px;
