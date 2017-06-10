@@ -61,6 +61,7 @@
                min-height: 0px; 
                max-height: 201px;
                height: auto;
+               float: right;
             }
             [class=sidebar] {
                 margin-right: 25px;
