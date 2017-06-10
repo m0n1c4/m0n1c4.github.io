@@ -57,7 +57,9 @@
                 display: flex;
             }
             img {
-               max-width: 100%;
+               max-width: 636px; 
+               min-height: 0px; 
+               max-height: 201px;
                height: auto;
             }
             [class=sidebar] {
