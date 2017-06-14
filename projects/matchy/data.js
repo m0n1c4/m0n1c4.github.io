@@ -100,15 +100,18 @@ console.log(animals.length);
 // we are using an array to hold the friends list
 // because arrays are easy to work with whether they
 // contain strings or numbers
-var friends = [];
+var friendsList = [];
 function pickFriend(animals){
     var getName = animals[Math.floor(Math.random() * animals.length)];
     return getName["name"];
 }
 
-friends.push(pickFriend(animals));
-console.log(friends);
-animals[0].friends = pickFriend(animals);
+friendsList.push(pickFriend(animals)); //pushed random name to array
+console.log(friendsList);
+
+animals[0].friends = []; //created the array 'friends' inside the first object
+animals[0].friends.push(friendsList[0]); //pushed the friendsList at index 0 to the array
+animals[0].friends.push("Testimal"); //test animal
 console.log(animals[0]);
 
 /** 
