@@ -410,7 +410,7 @@ _.contains = function(arr, value){
   //check if array contains value
   //if value is found return true
   //otherwise return false
-  return arr.indexOf(value) > -1 ? true : false; //ternary operator use
+  0//ternary operator use
 }
 // ternary syntax:
 // condition ? true case : false case;

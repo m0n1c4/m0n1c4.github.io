@@ -227,3 +227,24 @@ var falsetest = true
      else if(isFalse){return false}
      else if(isTrue){return true}
  };
+ 
+ // EXTEND //
+ _.extend = function(parentOb, o2){
+	
+	//1.Uses the ARGUMENTS property as a collection
+	//2.ARGUMENTS = all arguments passed into the function
+	//3.STARTING LOOP
+      _.each(arguments, function(obj, index, args){
+        //4. If index is NOT the 1st index DO THIS
+		//* the first index is where everything is being copied
+		  if(index > 0){
+			  
+			  //5. Use each object as the collection and loop thru them
+			  //6. STARTING 2ND LOOP
+			  //7. Loops thru all properties of that object
+			  //8. assigns the key and value to parent object
+            _.each(obj, function(v, k, o) { 
+				parentOb[k] = v })}
+      })
+    return parentOb
+}
