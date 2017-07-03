@@ -1,0 +1,23 @@
+{
+  "name": "well-of-html",
+  "version": "0.0.1",
+  "homepage": "https://github.com/OperationSpark/well-of-html",
+  "authors": [
+    "John Fraboni <john@operationspark.org>"
+  ],
+  "description": "A runthrough of html elements...",
+  "main": "index.html",
+  "license": "copyright Operation Spark",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "notes": "~0.0.4",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

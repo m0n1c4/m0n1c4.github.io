@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/notes/notes.js"></script>
+    <title>A Well of HTML</title>
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <!-- ALL YOUR MARKUP GOES BELOW HERE -->
+        <div id="top">
+          <h1>First Heading</h1>
+          <h2>Sub Heading</h2>    
+        </div>  
+        
+        <!-- making a flexbox -->
+        <div id="select-one" class="flex-row">
+             <div>One</div>
+             <div>Two</div>
+             <div>Three</div>
+             <div>Four</div>
+             <div>Five</div>
+        </div>
+        
+        <!-- making the main content-->
+        <div id="main">
+            <p> 
+                <h3>This is an experiment</h3>
+                <a href="https://en.wikipedia.org/wiki/Ganzfeld_experiment">Ganzfeld Experiment</a>
+            </p>
+            <p> 
+                <h4>This is a picture of fruit</h4>
+                <img src="/projects/well-of-html/img/apple-in-grass.jpg" />
+            </p>
+            <p>
+                <h5>This heading is pretty <small>small</small>.<h5>
+                    <p>
+                       <b> This paragraph contains some information: </b>
+                       <br> The activist promotion of an order that ultimately yields disorder 
+                       <br> and the perservation of <i>unique natural conditions</i> supporting 
+                       <br> <strong>individuality</strong> in human existence. Participating in a movement for
+                       <br> the <em>homo neophilus</em> genre through contrarianism.
+                    </p>
+                    
+                <h6>The smallest heading yet!</h6>
+            </p>
+        </div>
+            <!-- making unordered list and ordered list -->
+        <div id="lists">
+            <ul><h6><small>Titles of Our Lady of Discord</small></h6>
+                <li>Kallisti</li>
+                <li>Discordia</li>
+                <li>She Who Has Done It All</li>
+            </ul>
+            <ol><h6><small>Favorite Things</small></h6>
+                <li>Golden Apples</li>
+                <li>5 pounds of Flax</li>
+                <li>Verwirrung</li>
+            </ol>
+        </div>
+            <!-- making a form -->
+        <div id="form">
+            <form class="test-form">
+             <div>
+               <label for="name">Name:</label>
+               <input type="text" id="name" value="Your Name" />
+             </div>
+             <div>
+                 <label for="mail">E-mail:</label>
+                 <input type="email" id="mail" value="Your Email" />
+             </div>
+             <div>
+                <label for="msg">Message:</label>
+                <textarea id="msg" value="Your message here"></textarea>
+             </div>
+
+             <div class="button">
+               <button type="submit">Send your feedback</button>
+             </div>
+            </form>
+        </div>    
+            <!-- making tables -->
+        <div id="table">  
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                   <tr>
+                    <td colspan="2">Names of students in class of 2020...</td>
+                   </tr>
+                </tfoot>
+                <tbody>
+                     <tr>
+                       <td>Punch</td>
+                       <td>Max</td>
+                     </tr>
+                     <tr>
+                       <td>Judy</td>
+                       <td>Min</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>  
+        
+        <!--- making a grid with bootstrap --->
+        <div class="example-grid">
+            <div class="row">
+            <div class="col-md-2"><img src="/projects/well-of-html/img/eJwFwdERgyAMANBdGIAQwGDchkOK9rRwJH71unvf-5pnXmYzh-qQDWA_pfS5W9E-c6u29d6umscptvQbsmoux10_KoDMzseIRIyOXAoEAZe4ckDiNTpCXjy8Aqbki32P.jpg" class="row-img"></img>
+        </div>
+        <div class="col-md-10">Jesus got rid of all the dinosaurs! You can eat them and feel good about yourself!</div>
+        </div>
+            <div class="row">
+            <div class="col-md-2"><img src="/projects/well-of-html/img/eJwVzFEOgyAMANC7cABaC4h6G4IEMbIS2n0tu_uyd4D3Me_5mMNcqkMOgLNJ5nlaUZ6pFluZ61PSaGIzd0iqKV-9vFSACCn4sDukNQYK5IC2xSFG54LfcfNrJGj939yj.jpg" class="row-img"></img>
+            </div>
+        <div class="col-md-10">Profit is the stolen wages of the laborer!</div>
+        </div>
+            <div class="row">
+            <div class="col-md-2"><img src="/projects/well-of-html/img/xLDRpJg.png" class="row-img"></img>
+        </div>
+            <div class="col-md-10">If Jesus pokes you in the eye, you're blessed! Feel good about yourself!</div>
+        </div>
+        </div>
+        
+        <!-- ALL YOUR MARKUP GOES ABOVE HERE -->
+    </div>
+    <script>
+        $(function () {
+            window.opspark.notes.show();
+        });
+    </script>
+</body>
+
+</html>
