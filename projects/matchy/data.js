@@ -15,7 +15,7 @@ var animal = {};
 animal.species = "Scorpaphin";
 animal["name"] = "Lester";
 animal.noises = [];
-console.log(animal);
+// console.log(animal);
 
 
 //////////////////////////////////////////////////////////////////////
@@ -30,9 +30,9 @@ addNoise("eeeekeeeekeeeekeee");
 noises[noises.length] = "glubglubglub";
 
 
-console.log(noises.length);
-console.log(noises[noises.length - 1]);
-console.log(noises);
+// console.log(noises.length);
+// console.log(noises[noises.length - 1]);
+// console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
@@ -40,9 +40,9 @@ console.log(noises);
 
 animal['noises'] = noises; //make sure to use the quotes in bracket syntax
 //or you will be very confused when your array renames all your keys
-console.log(animal[noises]);
+// console.log(animal[noises]);
 addNoise("RAAAWR");
-console.log(animal);
+// console.log(animal);
 /* *******************************************************************
  * Step 4 - Review
  *
@@ -69,7 +69,7 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 var animals = [];
 animals.push(animal);
-console.log(animals);
+// console.log(animals);
 
 var duck = {
     species: "duck",
@@ -91,8 +91,8 @@ var unicorn = {species: "unicorn",
 };
 animals.push(unicorn);
 
-console.log(animals);
-console.log(animals.length);
+console.log(animals); //logs all animals objects
+// console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
@@ -113,6 +113,13 @@ animals[0].friends = []; //created the array 'friends' inside the first object
 animals[0].friends.push(friendsList[0]); //pushed the friendsList at index 0 to the array
 animals[0].friends.push("Testimal"); //test animal
 console.log(animals[0]);
+
+// give all animals friends??
+// for(var i = 0; i < animals.length; i++){
+//     if(animals[i].friends === [] || null){
+//         animals[i].friends.push(pickFriend(animals));
+//     }
+// }
 
 /** 
  * Nice work! You're done Part 1. Pat yourself on the back and 

@@ -12,13 +12,17 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+
 function search(animals, name){
     for (var i = 0; i < animals.length; i++){
         if (animals[i].name === name){
+            console.log(animals);
             return animals[i];
         }
-        return null;
-    }
+        console.log(animals);
+        
+    }return null;
 }
 
 
@@ -49,13 +53,14 @@ function remove(animals, name){
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function add(animalsArr, animal){
-    for (var i = 0; i < animalsArr.length; i++){ // typeError animals is undefined; attempting fix with name change
+function add(animals, animal){
+    for (var i = 0; i < animals.length; i++){ 
         
-    if(animalsArr[i]['name'] !== animal['name'] && animal['name'].length > 0 && animal['species'].length > 0){
-    animalsArr.push(animal);
-     return animalsArr;
-    } // do we need an else case?
+    if(animals[i]['name'] !== animal['name'] && animal['name'].length > 0 && animal['species'].length > 0){
+    animals.push(animal);
+    console.log(animals); //logs the array with the correct number of animals
+     return animals;
+    } 
   }
  
 }
