@@ -1,0 +1,100 @@
+/* testStyle */
+/*body {*/
+/*  background-color: #99ff66*/
+/*}*/
+
+/*#overlay {*/
+/*  position: fixed; */
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  background: #000;*/
+/*  opacity: 0.5;*/
+/*  filter: alpha(opacity=50);*/
+/*}*/
+/*#modal {*/
+/*  position:absolute; /*most important to give absolute position!*/
+/*  background:url(bgGradient.png) 0 0 repeat;*/
+/*  background:rgba(0,0,0,0.2);*/
+/*  border-radius:14px;*/
+/*  padding:8px;*/
+/*}*/
+
+/*#content {*/
+/*  border-radius:8px;*/
+/*  background:#fff;*/
+/*  padding:20px;*/
+/*}*/
+
+/*#close {*/
+/*  position:absolute;*/
+/*  background:url(/img/close.png) 0 0 no-repeat;*/
+/*  width:24px;*/
+/*  height:27px;*/
+/*  display:block;*/
+/*  top:-7px;*/
+/*  right:-7px;*/
+/*}*/
+
+/* BEGIN BUTTON TUTORIAL CSS*/
+
+
+
+.filter a {
+  position: relative;
+}
+/*setting up active class for filters*/
+.filter a.active:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 15px 0 0;
+  border-color: #333 transparent transparent transparent;
+}
+
+/*setting up flexboxes to hold elements*/
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxes a {
+  width: 23%;
+  border: 2px solid #333;
+  margin: 0 1% 20px 1%;
+  line-height: 60px;
+}
+
+/*defining keyframe animations*/
+
+@keyframes zoom-in {
+  0% {
+   transform: scale(.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes rotate-right {
+  0% {
+    transform: translate(-100%) rotate(-100deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.is-animated {
+  animation: .6s zoom-in;
+  animation: .6s rotate-right; 
+}
+
+/*END BUTTON TUTORIAL CSS*/
