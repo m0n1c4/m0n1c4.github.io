@@ -147,12 +147,17 @@ $(function () {
             var $productList = $('<div>').attr('id', idName); //this makes an <div> with id
             
             _.each(product, function(item){ //looping through whatever we give it
-              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).addClass('flex-row').appendTo($productList);
+              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).appendTo($productList);
               var $productThumb = $('<img>').attr({'class': 'prodThmb','src': 'img/product/thumbs/' + item.image});
                 $('<div>').attr('class', 'thumb').append($productThumb).appendTo($listItem);
                 $('<div>').attr('class', 'desc').text(item.desc).appendTo($listItem);
                 $('<div>').attr('class', 'price').text('Price: $' + item.price).appendTo($listItem);//.text(recording.title).appendTo($list);//creates a li from the title
-               
+               var $priceStock = $('<div>').attr({'class': 'stock'}).text(item.stock + 'remaining').appendTo($listItem); //new div for current stock
+               var productStock = item.stock;
+              if(productStock <= 10){
+                  $priceStock.text('Just ' + item.stock + ' remaining!');
+                 } else {$priceStock.hide();}
+                 
             }); //appends to the var $list
            
            
@@ -166,7 +171,7 @@ $(function () {
 makeList($productData, 'all-items').appendTo('#section-product');
 
 /////// making all items respond to click event ////////
-
+//////////////////////////////////////////////////////////////////////////
 
 
 
@@ -179,7 +184,7 @@ $('#search-submit').click(function(event){
  let filteredProducts =  search($productData, query);
  //this is where the page clear and repopulation occurs
  makeList(_.unique(filteredProducts), 'search-results').appendTo('#section-product');
- console.log(_.unique(filteredProducts));
+//  console.log(_.unique(filteredProducts));
 });
 
 var search = function(collection, query){
@@ -241,7 +246,9 @@ individualSearch (object, string) {
   //   'href': '#',
   //   'role': 'button'
   // })
-  
+ 
+    
+    
 
   
     
