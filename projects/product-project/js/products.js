@@ -118,8 +118,10 @@ $(function () {
   /// build some functionality for the filter buttons ///
  var $btnAction = $('.btn').click(function(){
    if(this.id === 'all-items'){ // if the id all-items is selected
+   
      $('#all-items > div').fadeIn(450); //these elements under the parent id to fade in
    } else { //the below code 
+     
      var $select = $('.' + this.id).fadeIn(450); //select items with a class same as 'this'.id 
      $('#all-items > div').not($select).hide();
    }
@@ -133,7 +135,7 @@ $(function () {
    
    /// build a modal to contain full product information
    /// and larger product images, revealed on thumb-click
- var $modalTime = $('.thumb').click(function(){ // click on div with class .thumb
+ var $modalTime = $('<img>').click(function(){ // click on div with class .thumb
     console.log('I clicked a thumbnail');
   });
 
@@ -142,10 +144,10 @@ $(function () {
  /////////////////////////////////////////////////////////////////////////
     function makeList(product, idName){
             $('#section-product').empty(); //empty the section
-            var $productList = $('<div>').attr('id', idName).addClass('flex-row'); //this makes an <div> with id
+            var $productList = $('<div>').attr('id', idName); //this makes an <div> with id
             
             _.each(product, function(item){ //looping through whatever we give it
-              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).appendTo($productList);
+              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).addClass('flex-row').appendTo($productList);
               var $productThumb = $('<img>').attr({'class': 'prodThmb','src': 'img/product/thumbs/' + item.image});
                 $('<div>').attr('class', 'thumb').append($productThumb).appendTo($listItem);
                 $('<div>').attr('class', 'desc').text(item.desc).appendTo($listItem);
@@ -193,9 +195,6 @@ var search = function(collection, query){
     } else if (typeof value === 'object'){
      //this is recursion, using the search function to search inside the object in the collection
     // matching values will be concat into the filteredItems array
-      // if(search(value, query) === true){filteredItems.concat(value)}
-     
-     // console.log('current index in $productData:' + productHolder);
       _.each(search(value, query), function(value, i, a){
         if (Array.isArray(value)){
           filteredItems.push(array);
@@ -234,10 +233,6 @@ individualSearch (object, string) {
 * need to keep track of these in some way (an array?)
 * 
 */
-
-
-  /// m
-  
 
 ////// PRICE FILTER //////////////////////////////
   // var priceLowToHigh = $('<a>').attr({
