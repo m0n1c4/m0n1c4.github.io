@@ -20,20 +20,22 @@ $(function () {
       'border-radius': '10px',
       'font-family': '"Nova Mono", "Courier New", Courier, monospace',
       'font-size': 'small',
+      'color': 'white',
     });
     
-    $('div').css({
-      'font-color':'#',
-    });
+    // $('div').css({
+    //  
+    // });
     
     $('h1').css({
       'font-family': "'Atomic Age'",
-      'font-color': '#ffffff'
+      'color': 'white'
     });
     
-    $('.prodThmb').css({
-      'border-radius': '10px',
-    });
+  
+    // $('.prodThmb').css({
+    //   'border-radius': '10px',
+    // });
     
     $('.flex-row').css({
        'display': 'flex',
@@ -45,9 +47,12 @@ $(function () {
        
     });
     
+    // $('#search-case').css({
+    //     'padding': '4px',
+    // });
+    
     $('#section-product').css({
       'border-radius': '10px',
-      'padding': '15px',
     });
     
     $('#all-items').css({
@@ -57,7 +62,6 @@ $(function () {
       'flex-direction': 'row',
       'justify-content': 'space-between',
       'margin': '20px',
-      'padding': '4px'
       
     });
     
@@ -78,13 +82,14 @@ $(function () {
 
    var $searchBar = $('<input>').attr({
     'id': 'search-input',
-    'type': 'text'
+    'type': 'text',
+    'size': '50%',
    });
   
    var $searchButton = $('<input>').attr({
     'id': 'search-submit',
     'type': 'button',
-    'value': 'search'
+    'value': 'search',
    
    });
   
@@ -111,7 +116,7 @@ $(function () {
   
   
   /// PUT THOSE BUTTONS IN THEIR PLACE ///
-   $('#search-case').append($searchBar, $searchButton);
+   $('#search-case').append($searchBar, $searchButton).css({'padding': '8px',});
    $('#section-search').append($phonesOnly, $casesOnly, $allItems);
 //////////////////////////////////////////////////////////////////////////////  
 
@@ -131,11 +136,25 @@ $(function () {
  
    /// end of filter button functionality ///
    
-   //////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////
    
-   /// build a modal to contain full product information
-   /// and larger product images, revealed on thumb-click
- var $modalTime = $('<img>').click(function(){ // click on div with class .thumb
+/////// build a modal to contain full product information ///////////////////
+   /// and larger product images, revealed on thumb-click ///
+   
+   var modal = (function(){
+     var 
+       method = {},
+      $overlay,
+      $modal, //contains the modal
+      $content, //contains the item content we want to display
+      $close; //close the window
+      
+      
+   }());
+ 
+/////// making all items respond to click event ////////
+//////////////////////////////////////////////////////////////////////////
+$('.prodThmb').click(function(){ // click on div with class .thumb
     console.log('I clicked a thumbnail');
   });
 
@@ -147,14 +166,14 @@ $(function () {
             var $productList = $('<div>').attr('id', idName); //this makes an <div> with id
             
             _.each(product, function(item){ //looping through whatever we give it
-              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).appendTo($productList);
-              var $productThumb = $('<img>').attr({'class': 'prodThmb','src': 'img/product/thumbs/' + item.image});
+              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).css({'padding': '10px'}).appendTo($productList);
+              var $productThumb = $('<img>').attr({'class': 'prodThmb','src': 'img/product/thumbs/' + item.image}).css({'border-radius':'5px'});
                 $('<div>').attr('class', 'thumb').append($productThumb).appendTo($listItem);
                 $('<div>').attr('class', 'desc').text(item.desc).appendTo($listItem);
                 $('<div>').attr('class', 'price').text('Price: $' + item.price).appendTo($listItem);//.text(recording.title).appendTo($list);//creates a li from the title
-               var $priceStock = $('<div>').attr({'class': 'stock'}).text(item.stock + 'remaining').appendTo($listItem); //new div for current stock
+               var $priceStock = $('<div>').attr({'class': 'stock'}).text(item.stock + 'remaining').css({'color': 'red'}).appendTo($listItem); //new div for current stock
                var productStock = item.stock;
-              if(productStock <= 10){
+              if(productStock < 10){
                   $priceStock.text('Just ' + item.stock + ' remaining!');
                  } else {$priceStock.hide();}
                  
@@ -170,8 +189,7 @@ $(function () {
     ///// making a list of all products /////
 makeList($productData, 'all-items').appendTo('#section-product');
 
-/////// making all items respond to click event ////////
-//////////////////////////////////////////////////////////////////////////
+
 
 
 
