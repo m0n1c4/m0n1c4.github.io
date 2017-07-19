@@ -1,0 +1,172 @@
+/*Main body of site content*/
+body {
+         background-color: #C8C8A1;
+     }
+     
+table {
+         width: 100%;
+         background-color: #D6D6A3;
+         border-style: solid;
+         border-radius: 5px;
+         border-width: 4px;
+         border-color: #4C4C33;
+         margin: auto;
+         padding: 0px;
+     }
+     
+ header {
+         font-size: 1.5em;
+         font-weight: bold;
+     }
+     
+ [id=all-contents] {
+         max-width: 800px;
+         margin: auto;
+     }
+
+ th {
+         height: 50px;
+         background-color: #D6D6A3; 
+         width: 25%;
+     }
+
+ table,td,th {
+        border-style: dotted;
+        border-width: 2px;
+        border-color: #F7F7ED;
+        text-align: center;
+        font-family: "monospace, sans-serif";
+        color: #52521F;
+    }
+
+ h1,h2,p {
+        font-family:monospace,sans-serif;
+        color: #52521F;
+    }
+ 
+ h1 {
+        font-size:150%;
+        text-align:center;
+        font-family:monospace,sans-serif;
+    }
+ 
+ h2 {
+        font-size:125%;
+        text-align:center;
+        font-family:monospace,sans-serif;
+    }
+ 
+ img {
+        max-width: 100%;
+    }
+
+ p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+blockquote {
+        font-family:monospace,sans-serif;
+        color: #52521F;
+        font-size: small;
+        border-radius: 10px;
+    }
+
+
+ /*Link behaviors*/ 
+ a:link {
+    color: #52521F;
+    text-decoration: none;
+}
+
+ a:visited {
+    color: #52521F;
+    text-decoration: none;
+}
+
+ a:hover {
+    color: #FFFFFF;
+    text-shadow: 4px 4px 16px #333300;
+}
+
+ a:active {
+    color: #52521F;
+    text-decoration: none;
+}
+
+ 
+
+ /* The following are styles for specific text classes */
+
+.describe {
+    border-style: hidden;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    text-indent: 35px;
+}
+
+.name {
+    font-family:sans-serif; 
+    text-align:center;
+}
+
+.email {
+    font-family:sans-serif; 
+    text-align:center;
+} 
+
+ /* The following are div styles */
+.gallery {
+    border-style: solid dotted;
+    border-radius: 25px;
+    border-width: 1px;
+    margin: 100px 100px 50px 50px;
+}
+
+.header {
+    border-style: hidden;
+    letter-spacing: 4px;
+    margin: auto;
+}
+
+.pic {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    border-style: hidden;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+}
+
+.bio {
+    float: none;
+    display: block;
+    border-style: hidden;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+
+.nav {
+    
+    display: inline-block;
+    width: 100%;
+    
+    position: relative;
+    border-style: inherit;
+    text-align: center;
+    margin: 10px;
+}
+.poem {
+    display: block;
+    float: none;
+    width: 40%;
+    margin: 10px auto 10px auto;
+    background: #fff;
+    text-align: center;
+    
+}
+                                                         

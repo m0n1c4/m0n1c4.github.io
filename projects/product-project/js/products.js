@@ -24,7 +24,7 @@ $(function () {
     });
     
     // $('div').css({
-    //  
+    //   'font-color':'#',
     // });
     
     $('h1').css({
@@ -32,27 +32,27 @@ $(function () {
       'color': 'white'
     });
     
-  
+    // $('.stock').css({
+    //     'color': 'red',
+    // });
+    
     // $('.prodThmb').css({
     //   'border-radius': '10px',
     // });
     
     $('.flex-row').css({
-       'display': 'flex',
-       'flex-wrap': 'wrap',
-       'flex-direction': 'row',
-       'justify-content': 'space-between',
-       'margin': '20px',
-       'padding': '4px'
+      'display': 'flex',
+      'flex-wrap': 'wrap',
+      'flex-direction': 'row',
+      'justify-content': 'space-between',
+      'margin': '20px',
+      'padding': '4px'
        
     });
     
-    // $('#search-case').css({
-    //     'padding': '4px',
-    // });
-    
     $('#section-product').css({
       'border-radius': '10px',
+      'padding': '15px',
     });
     
     $('#all-items').css({
@@ -62,17 +62,18 @@ $(function () {
       'flex-direction': 'row',
       'justify-content': 'space-between',
       'margin': '20px',
+      'padding': '4px'
       
     });
     
  //////////////////////////////////////////////////////////////////////////
     
-    // declaring a var to hold product data address //
+    // declaring a var to hold data address //
    
-    var $productData = allProduct; //creating a var to hold the JSON info
-     console.log($productData);
+    var productData = allProduct; //creating a var to hold the JSON info
+     console.log(productData);
     
-    // make your product data show here //
+    // make your data show here //
     $('<div>').attr('id', 'section-product').appendTo('main');
     
     /////////////////////////////////////////////////////////////////////////
@@ -89,19 +90,19 @@ $(function () {
    var $searchButton = $('<input>').attr({
     'id': 'search-submit',
     'type': 'button',
-    'value': 'search',
+    'value': 'search'
    
    });
   
    var $phonesOnly = $('<button>').attr({
-    'class': 'btn',
+    'class': 'filter',
     'id': 'phone',
     'href': '#',
     'role': 'button'
    }).text('Phones');
   
    var $casesOnly = $('<button>').attr({
-    'class': 'btn',
+    'class': 'filter',
     'id': 'case',
     'href': '#',
     'role': 'button'
@@ -109,10 +110,21 @@ $(function () {
   
    var $allItems = $('<button>').attr({
     'id': 'all-items',
-    'class': 'btn active',
+    'class': 'filter active',
     'href': '#',
     'role': 'button'
    }).text('Show All');
+   
+  
+//   var $priceLowToHigh = $('<button>').attr({
+//      'class': 'btnfilter',
+//      'id': 'price',      
+//      'href': '#',
+//      'role': 'button'
+//   }).text('Price Low to High')
+//   .click(function(){
+//       makeList(lowToHigh, 'price-sort').appendTo('#section-product');
+//   });
   
   
   /// PUT THOSE BUTTONS IN THEIR PLACE ///
@@ -121,11 +133,11 @@ $(function () {
 //////////////////////////////////////////////////////////////////////////////  
 
   /// build some functionality for the filter buttons ///
- var $btnAction = $('.btn').click(function(){
+ var $btnAction = $('.filter').on('click', function(){
    if(this.id === 'all-items'){ // if the id all-items is selected
    
      $('#all-items > div').fadeIn(450); //these elements under the parent id to fade in
-   } else { //the below code 
+  } else { //the below code 
      
      var $select = $('.' + this.id).fadeIn(450); //select items with a class same as 'this'.id 
      $('#all-items > div').not($select).hide();
@@ -135,42 +147,39 @@ $(function () {
  });
  
    /// end of filter button functionality ///
-   
+/////// PRICE FILTER //////////////////////////////
+// var lowToHigh = function(){
+//             return productData.sort(function(a, b) {
+//                 return parseFloat(a.price) - parseFloat(b.price);
+//             });
+//         };
+//   console.log(lowToHigh());    
+//   console.log(makeList(lowToHigh)); 
  ////////////////////////////////////////////////////////////////////////////
    
-/////// build a modal to contain full product information ///////////////////
-   /// and larger product images, revealed on thumb-click ///
    
-   var modal = (function(){
-     var 
-       method = {},
-      $overlay,
-      $modal, //contains the modal
-      $content, //contains the item content we want to display
-      $close; //close the window
-      
-      
-   }());
- 
-/////// making all items respond to click event ////////
-//////////////////////////////////////////////////////////////////////////
-$('.prodThmb').click(function(){ // click on div with class .thumb
-    console.log('I clicked a thumbnail');
-  });
 
 //////////////////////////////////////////////////////////////////////////////    
-    //building a function to make product lists//
+    //building a function to make lists//
  /////////////////////////////////////////////////////////////////////////
-    function makeList(product, idName){
+    function makeList(products, idName){
             $('#section-product').empty(); //empty the section
             var $productList = $('<div>').attr('id', idName); //this makes an <div> with id
             
-            _.each(product, function(item){ //looping through whatever we give it
-              var $listItem = $('<div>').attr({'class': item.type, 'id': item.type }).css({'padding': '10px'}).appendTo($productList);
-              var $productThumb = $('<img>').attr({'class': 'prodThmb','src': 'img/product/thumbs/' + item.image}).css({'border-radius':'5px'});
+            _.each(products, function(item){ //looping through whatever we give it
+              var $listItem = $('<div>')
+                .addClass('product')
+                .attr({'id': item.type })
+                .css({'padding': '10px'})
+                .appendTo($productList);
+                $listItem.data('product', item);
+              var $productThumb = $('<img>')
+               .attr({'id': 'prodThmb','src': 'img/product/thumbs/' + item.image})
+               .css({'border-radius':'5px'});
+                
                 $('<div>').attr('class', 'thumb').append($productThumb).appendTo($listItem);
                 $('<div>').attr('class', 'desc').text(item.desc).appendTo($listItem);
-                $('<div>').attr('class', 'price').text('Price: $' + item.price).appendTo($listItem);//.text(recording.title).appendTo($list);//creates a li from the title
+                $('<div>').attr('class', 'price').text('Price: $' + item.price).appendTo($listItem); 
                var $priceStock = $('<div>').attr({'class': 'stock'}).text(item.stock + 'remaining').css({'color': 'red'}).appendTo($listItem); //new div for current stock
                var productStock = item.stock;
               if(productStock < 10){
@@ -187,11 +196,37 @@ $('.prodThmb').click(function(){ // click on div with class .thumb
 
    
     ///// making a list of all products /////
-makeList($productData, 'all-items').appendTo('#section-product');
+makeList(productData, 'all-items').appendTo('#section-product');
 
-
-
-
+ /////////////////////////////////////////////////////////////////////
+ /// making all product images respond to click ///
+ ////////////////////////////////////////////////////////////////////
+ $('.product').on('click', function(event) {
+     const
+     // wrap list item in jQuery //
+     $li = $(event.currentTarget),
+     
+     // get the data we assigned to this list item //
+     product = $li.data('product');
+     
+     // empty the modal body, then append the details //
+     const $modalBody = $('#modal-product-detail-body')
+     .empty()
+     .append(createProductDetailsView(product))
+    $('#modal-product-detail').modal('show');
+ });
+ 
+ function createProductDetailsView(product) {
+    
+     
+     var $productDetailsPop = $('<div>').attr('id', 'details-holder');
+      $('<div>').text(product.desc).css({'padding': '10px'}).appendTo($productDetailsPop);
+     var $imageHold = $('<div>').attr('id', 'image-holder').prependTo($productDetailsPop);
+      $('<img>').attr({'src': 'img/product/thumbs/' + product.image }).appendTo($imageHold);
+      $('<div>').text(product.specs).appendTo($productDetailsPop);
+      console.log($productDetailsPop);
+     return $productDetailsPop;
+ }
 
     
 /////////////////////////////////////////////////////////////////////////
@@ -199,7 +234,7 @@ makeList($productData, 'all-items').appendTo('#section-product');
 /////////////////////////////////////////////////////////////////////////
 $('#search-submit').click(function(event){
   const query = $('#search-input')[0].value; //selecting the value in the $searchBar
- let filteredProducts =  search($productData, query);
+ let filteredProducts =  search(productData, query);
  //this is where the page clear and repopulation occurs
  makeList(_.unique(filteredProducts), 'search-results').appendTo('#section-product');
 //  console.log(_.unique(filteredProducts));
@@ -240,7 +275,7 @@ var search = function(collection, query){
 * 
 * search() {
   loops through all data
-  runs search on every product individually
+  runs search on every individually
 }
 
 individualSearch (object, string) {
@@ -257,13 +292,7 @@ individualSearch (object, string) {
 * 
 */
 
-////// PRICE FILTER //////////////////////////////
-  // var priceLowToHigh = $('<a>').attr({
-  //   'class': 'price',
-  //   'data-filter': '???',
-  //   'href': '#',
-  //   'role': 'button'
-  // })
+
  
     
     
@@ -274,7 +303,7 @@ individualSearch (object, string) {
     
     
   }).fail(function() { //in case the JSON file does not load
-    console.log('getJSON on product failed!'); 
+    console.log('getJSON on failed!'); 
     
   });
   // ALL YOUR CODE GOES ABOVE HERE //
