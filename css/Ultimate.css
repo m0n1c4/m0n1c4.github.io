@@ -7,7 +7,7 @@ table {
          width: 100%;
          background-color: #D6D6A3;
          border-style: solid;
-         border-radius: 5px;
+         border-radius: 10px;
          border-width: 4px;
          border-color: #4C4C33;
          margin: auto;
@@ -15,25 +15,29 @@ table {
      }
      
  header {
-         font-size: 1.5em;
+         font-family: monospace, sans-serif;
+         font-size: 2.5em;
          font-weight: bold;
      }
      
- [id=all-contents] {
-         max-width: 800px;
-         margin: auto;
-     }
+ /*[id=all-contents] {*/
+ /*        max-width: 800px;*/
+ /*        margin: auto;*/
+ /*    }*/
 
  th {
+         font-family: monospace, sans-serif;
          height: 50px;
          background-color: #D6D6A3; 
          width: 25%;
+         border-radius: 10px;
      }
 
  table,td,th {
         border-style: dotted;
         border-width: 2px;
         border-color: #F7F7ED;
+        border-radius: 10px;
         text-align: center;
         font-family: "monospace, sans-serif";
         color: #52521F;
@@ -45,19 +49,21 @@ table {
     }
  
  h1 {
-        font-size:150%;
+        font-size: 2.5em;
         text-align:center;
         font-family:monospace,sans-serif;
     }
  
  h2 {
-        font-size:125%;
+        font-size:1.25em;
         text-align:center;
         font-family:monospace,sans-serif;
     }
  
  img {
         max-width: 100%;
+        border:none;
+        border-radius: 10px;
     }
 
  p {
@@ -107,7 +113,7 @@ blockquote {
 }
 
 .name {
-    font-family:sans-serif; 
+    font-family:monospace, sans-serif; 
     text-align:center;
 }
 
@@ -153,7 +159,7 @@ blockquote {
 .nav {
     
     display: inline-block;
-    width: 100%;
+    width: 95%;
     
     position: relative;
     border-style: inherit;
