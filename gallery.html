@@ -5,46 +5,52 @@ proportions by the css. It may need it's own names in the css to make this work.
 -->
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		
+    	 <!--- Adding Bootstrap support --->
+    	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <!--- Added FontAwesome icon set --->
+          <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+         <!-- jQuery --->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
-         <!--- this stylesheet reference might need to be changed ---->
+         <!--- custom CSS appears after Bootstrap to add flavor ---->
 		<link type="text/css" rel="stylesheet" href="css/Ultimate.css" />
+		 <meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>::|| Monica Kasson ||::</title>
 	</head>
 	<body>
 	
- <!--- Nav section --->
-	<div class="nav">
-		<table>
-		  <thead>
-			
-				<th><a href="portfolio.html">Code Portfolio</a></th>
-				<th><a href="index.html">Home</a></th>
-				<th><a href='studies.html'>Studies</a></th>
-				<th><a
-	href="mailto:mlcntnt@gmail.com">Contact</a></th>
-	            
-		  	
-		  </thead>
-		</table>
-	</div>
-    <!--- end nav section --->
-    </div>
- </p>
+<!--- Nav section --->
+		  <nav>
+			<div class="nav">
+				<div class='flex-row'>
+					
+						 <div class="col-xs-3"><button class='btn btn-block'><a href="portfolio.html">Code Portfolio</a></button></div>
+						 <div class="col-xs-3"><button class='btn btn-block'><a href="index.html">Home</a></button></div>
+						 <div class="col-xs-3"><button class='btn btn-block'><a href='about.html'>About</a></button></div>
+						 <div class="col-xs-3"><button class='btn btn-block'><a href="mailto:mlcntnt@gmail.com">Contact</a></button></div>
+			            
+				  	
+				 </div>
+			</div>
+		  </nav>
+		    <!--- end nav section --->
+    
     <!--- main --->
     <main>
         
 		     <div class="bgimg">
 				<div class="topleft">
-					<p>Logo</p>
+					<p><!---Logo---></p>
 				</div>
 				<div class="middle">
 						 <h2>|| coming soon ||</h2>
 				<hr>
-				<p>	For older works visit my <a href="http://redfortune.deviantart.com/gallery/">deviantArt</a> page.</p>
+				<p>	For older works visit my <a href="http://redfortune.deviantart.com/gallery/">deviantArt <i class='fa fa-deviantart'></i></a> page.</p>
 				</div>
 				<div class="bottomleft">
-				<p>**special characters**</p>
+				<p><!---**special characters**---></p>
 				</div>
 		</div>
 	</main>
