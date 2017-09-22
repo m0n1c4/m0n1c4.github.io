@@ -1,6 +1,7 @@
 /*Main body of site content*/
 body {
          background-color: #C8C8A1;
+         padding-top: 54px;
      }
      
 table {
@@ -43,10 +44,10 @@ table {
         color: #52521F;
     }
 
- h1,h2,p {
-        font-family:monospace,sans-serif;
-        color: #52521F;
-    }
+ /*h1,h2,p {*/
+ /*       font-family:monospace,sans-serif;*/
+ /*       color: #52521F;*/
+ /*   }*/
  
  h1 {
         font-size: 2.5em;
@@ -71,12 +72,17 @@ table {
         font-size: 15px;
     }
 
-blockquote {
+ blockquote {
         font-family:monospace,sans-serif;
         color: #52521F;
         font-size: small;
         border-radius: 10px;
     }
+    
+ small {
+        text-align: center;
+        font-size: 15px;
+}
 
 
  /*Link behaviors*/ 
@@ -123,11 +129,20 @@ blockquote {
 } 
 
  /* The following are div styles */
-.gallery {
-    border-style: solid dotted;
-    border-radius: 25px;
-    border-width: 1px;
-    margin: 100px 100px 50px 50px;
+/*.gallery {*/
+/*    border-style: solid dotted;*/
+/*    border-radius: 25px;*/
+/*    border-width: 1px;*/
+/*    margin: 100px 100px 50px 50px;*/
+/*}*/
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+
+.pagination {
+  margin-bottom: 30px;
 }
 
 .header {
@@ -170,4 +185,10 @@ blockquote {
     text-align: center;
     
 }
-                                                         
+
+/* Styles for gallery use */
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}                                                      
