@@ -62,9 +62,11 @@ table {
     }
  
  img {
-        max-width: 100%;
+        max-width: 50%;
         border:none;
         border-radius: 10px;
+        height: 25%;
+
     }
 
  p {
